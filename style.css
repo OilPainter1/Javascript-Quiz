@@ -1,6 +1,13 @@
-header{
-    
+body{
+    background-color: cornflowerblue;
+    display: flexbox;
+    justify-content: center;
 }
+section{
+    display: flexbox;
+    justify-content: flex-start;
+}
+
 div{
     display: flex;
     justify-content: center;
