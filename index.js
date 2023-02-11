@@ -28,7 +28,7 @@ function renderTimer(){
     timer.setAttribute("id","time")
     var header = document.getElementById("header")
     header.appendChild(timer)
-    timer.textContent=2
+    timer.textContent= 60
     var intervalID = setInterval(function(){
         if(timer.textContent==0 || timer.textContent<0){
             var section = document.getElementById("questionSection")
