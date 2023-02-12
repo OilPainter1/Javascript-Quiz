@@ -28,15 +28,12 @@ function renderTimer(){
     timer.setAttribute("id","time")
     var header = document.getElementById("header")
     header.appendChild(timer)
-    timer.textContent= 60
+    timer.textContent= 100
     var intervalID = setInterval(function(){
         if(timer.textContent==0 || timer.textContent<0){
             var section = document.getElementById("questionSection")
             var question = document.getElementById("question")
             question.textContent=""
-            for (var i = 0;i < question.childElementCount; i++){
-                question.removeChild(question.childNodes[i])
-            }
             timer.remove()
             clearInterval(intervalID)
 
@@ -44,15 +41,16 @@ function renderTimer(){
         }
         else{timer.textContent--}
     },1000)
+    return
 }
 
 
 
-function renderQuestions(index){
+function renderQuestions(index,intervalID){
 
     if(index == 19){
         console.log('reached end of questions')
-        clearTimeout(timeoutID)
+        clearTimeout()
         var timer = document.getElementById("time")
         timer.remove()
         renderInput()
@@ -126,24 +124,24 @@ function renderInput() {
 var questions=[
     "What does DOM stand for?",
     "Which of the following is not a javascript type?",
-    "Which of the following is javascript for the logical 'AND' operator?",
+    "Which of the following is javascript for the logical \"AND\" operator?",
     "Which of the following is a boolean?",
     "Which of the following does not evaluate to true?",
     "Which of the following is not a web API?",
     "How many times will this for loop run: for(var i = 0; i <3, i++)?",
     "What will console.log(\"4+4\") output?",
     "What will console.log(\"4\" + \"4\") output?",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
+    "Which Array method returns and removes the last element of the array?",
+    "Which Array method returns and removes the first element of the array?",
+    "Which of the following is a String?",
+    "What is the symbol for \"not\" in javascrit?",
+    "What will console.log(typeof true) output?",
+    "What index is \"2\" at in the array [1,2,3,4]",
+    "Which web API allows you to make http requests?",
+    "What does CSS stand for?",
+    "Which of the following is not an http request?",
+    "Which of the following is an escape character?",
+    "What type of code block follows a try block?",
 
 
 ]
@@ -158,17 +156,17 @@ var answers=[
     ["4", "3", "2", "1"],
     ["8","44","4+4","4"],
     ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
-    ["8","44","4+4","4"],
+    ["map","filter","push","pop"],
+    ["shift","reduce","slice","join"],
+    ["4","String","\"4\"","four"],
+    ["||","!","?!","??"],
+    ["array","number","string","boolean"],
+    ["1","2","3","0"],
+    ["fetch","DOM","indexedDB","keyboard API"],
+    ["certified style sheet","correct server status","cascading style sheet","certified server status"],
+    ["put","postpone","post","get"],
+    ["?","\\","-","+"],
+    ["while","if","else","catch"],
 
 ]
 
